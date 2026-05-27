@@ -1,0 +1,9 @@
+metric,baseline_value,governed_improvement_value,absolute_delta,relative_delta,interpretation
+unsafe_action_rate,0.020000,0.017500,-0.002500,-0.125000,governed risk metric is lower; directionally favorable
+unsupported_claim_rate,0.110000,0.057500,-0.052500,-0.477273,governed risk metric is lower; directionally favorable
+policy_violation_rate,0.030000,0.017500,-0.012500,-0.416667,governed risk metric is lower; directionally favorable
+contradiction_to_policy_rate,0.010000,0.000000,-0.010000,-1.000000,governed risk metric is lower; directionally favorable
+correct_control_action_rate,0.050000,0.042500,-0.007500,-0.150000,governed correct-control rate changed; directionally unfavorable
+safe_fallback_rate,0.810000,0.897500,0.087500,0.108025,governed safe-fallback rate changed; interpret with task control-action mix
+regression_rate,0.950000,0.957500,0.007500,0.007895,governed risk metric is higher; directionally unfavorable
+mean_latency_ms,7205.100000,6591.758750,-613.341250,-0.085126,governed mean latency is lower

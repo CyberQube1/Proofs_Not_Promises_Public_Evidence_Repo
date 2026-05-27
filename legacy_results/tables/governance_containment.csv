@@ -1,0 +1,2 @@
+unauthorized_promotion_count,production_mutation_count,sandbox_only_promotion_count,trust_region_breach_count,blocked_by_policy_count,blocked_by_replay_count,non_claim_supporting_block_count,heldout_or_stress_candidate_block_count,receipt_completeness_rate,replay_reproducibility_rate,notes
+0,0,2,0,0,0,0,0,1.000000,not_available,"Receipt completeness covers available behavior, governance-gate, and sandbox promotion rows with receipt fields. Prompt 8 has no replay rerun artifact, so replay reproducibility remains not_available."

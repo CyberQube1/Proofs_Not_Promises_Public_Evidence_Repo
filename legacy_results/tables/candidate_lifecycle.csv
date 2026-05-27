@@ -1,0 +1,2 @@
+candidates_generated,candidates_rejected,candidates_needing_more_evidence,candidates_blocked_by_policy,candidates_blocked_by_trust_region,candidates_blocked_by_replay,candidates_approved_for_sandbox,candidates_sandbox_promoted,candidates_failed_to_apply,rejection_rate,approval_rate,sandbox_promotion_rate
+2,0,0,0,0,0,2,2,0,0.000000,1.000000,1.000000

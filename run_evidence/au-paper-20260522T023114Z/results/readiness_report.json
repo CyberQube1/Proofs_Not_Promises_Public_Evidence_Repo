@@ -1,0 +1,206 @@
+{
+  "allowed_claims": [
+    "paper-evidence run readiness for the selected curated task and repro bundle",
+    "local model lane readiness with frozen comparator metadata"
+  ],
+  "blocking_gaps": [],
+  "checked_at": "2026-05-22T06:26:28Z",
+  "checks": [
+    {
+      "detail": "policy corpus registry exists: /home/spqr-admin/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/inputs/policy_corpus_registry.yaml",
+      "name": "registry_file",
+      "status": "pass"
+    },
+    {
+      "detail": "parsed 5 registry entries",
+      "name": "registry_parse",
+      "status": "pass"
+    },
+    {
+      "detail": "registry includes au_finance_baseline, asic, apra, and eu entries",
+      "name": "registry_required_entries",
+      "status": "pass"
+    },
+    {
+      "detail": "registry contains unresolved PENDING refs at entries.au_finance_baseline.aegis_active_law_hash, entries.au_finance_baseline.active_law_epoch_id, entries.au_finance_baseline.active_law_epoch_root, entries.au_finance_baseline.active_law_epoch_sequence_root, entries.au_finance_baseline.active_law_epoch_sequence_index, and 60 more",
+      "name": "registry_pending_refs",
+      "status": "warn"
+    },
+    {
+      "detail": "EU registry lane remains planned or placeholder and cannot support an EU readiness claim",
+      "name": "eu_registry_status",
+      "status": "warn"
+    },
+    {
+      "detail": "task schema exists: /home/spqr-admin/civitas/paper_eval_6.7b/tasks/schema/task.schema.json",
+      "name": "task_schema",
+      "status": "pass"
+    },
+    {
+      "detail": "task file exists: /home/spqr-admin/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/inputs/train_failures_100.jsonl",
+      "name": "task_file_exists",
+      "status": "pass"
+    },
+    {
+      "detail": "/home/spqr-admin/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/inputs/train_failures_100.jsonl has 100 schema-valid task row(s)",
+      "name": "task_schema_validation",
+      "status": "pass"
+    },
+    {
+      "detail": "task file exists: /home/spqr-admin/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/inputs/heldout_eval_100.jsonl",
+      "name": "task_file_exists",
+      "status": "pass"
+    },
+    {
+      "detail": "/home/spqr-admin/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/inputs/heldout_eval_100.jsonl has 100 schema-valid task row(s)",
+      "name": "task_schema_validation",
+      "status": "pass"
+    },
+    {
+      "detail": "task file exists: /home/spqr-admin/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/inputs/stress_50.jsonl",
+      "name": "task_file_exists",
+      "status": "pass"
+    },
+    {
+      "detail": "/home/spqr-admin/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/inputs/stress_50.jsonl has 50 schema-valid task row(s)",
+      "name": "task_schema_validation",
+      "status": "pass"
+    },
+    {
+      "detail": "loaded 250 task row(s)",
+      "name": "task_rows_present",
+      "status": "pass"
+    },
+    {
+      "detail": "selected task rows are not placeholder-labelled",
+      "name": "task_placeholder_status",
+      "status": "pass"
+    },
+    {
+      "detail": "selected task rows reference known registry corpus IDs",
+      "name": "task_registry_linkage",
+      "status": "pass"
+    },
+    {
+      "detail": "claim-supporting task rows use non-placeholder source refs",
+      "name": "claim_task_source_refs",
+      "status": "pass"
+    },
+    {
+      "detail": "claim-supporting task rows have no PENDING task fields",
+      "name": "claim_task_pending_refs",
+      "status": "pass"
+    },
+    {
+      "detail": "linked registry entries have no unresolved PENDING refs",
+      "name": "claim_registry_refs_resolved",
+      "status": "pass"
+    },
+    {
+      "detail": "claim-supporting tasks bind non-placeholder active-law hashes",
+      "name": "claim_active_law_hash",
+      "status": "pass"
+    },
+    {
+      "detail": "claimed policy-graph and trust-region task hashes are non-placeholder",
+      "name": "claimed_optional_hashes",
+      "status": "pass"
+    },
+    {
+      "detail": "gate schema, runner, and verifier preserve receipt-bound fail-closed Cassius approval checks",
+      "name": "cassius_gate_contract",
+      "status": "pass"
+    },
+    {
+      "detail": "Cassius evidence JSONL has 8 receipt-bound row(s): /home/spqr-admin/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/artifacts/cassius_challenge_evidence.jsonl",
+      "name": "cassius_evidence",
+      "status": "pass"
+    },
+    {
+      "detail": "repro_manifest exists: /home/spqr-admin/civitas/paper_eval_6.7b/repro/MANIFEST.md",
+      "name": "repro_manifest",
+      "status": "pass"
+    },
+    {
+      "detail": "repro_verify_script exists: /home/spqr-admin/civitas/paper_eval_6.7b/repro/VERIFY_RESULTS.sh",
+      "name": "repro_verify_script",
+      "status": "pass"
+    },
+    {
+      "detail": "run directory exists: /home/spqr-admin/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z",
+      "name": "run_dir",
+      "status": "pass"
+    },
+    {
+      "detail": "run manifest exists: /home/spqr-admin/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/MANIFEST.md",
+      "name": "run_manifest",
+      "status": "pass"
+    },
+    {
+      "detail": "paper mode run manifest is not smoke-labelled",
+      "name": "paper_run_boundary",
+      "status": "pass"
+    },
+    {
+      "detail": "paper mode run manifest freezes provider/backend/run-family/API/decode metadata",
+      "name": "paper_model_manifest",
+      "status": "pass"
+    },
+    {
+      "detail": "run containment table reports production_mutation_count=0 and unauthorized_promotion_count=0",
+      "name": "governance_containment_counts",
+      "status": "pass"
+    },
+    {
+      "detail": "sandbox promotion schema fixes sandbox_only=true and production_mutation=false",
+      "name": "sandbox_only_contract",
+      "status": "pass"
+    },
+    {
+      "detail": "sandbox state marker is present and production_mutation=false",
+      "name": "sandbox_state_marker",
+      "status": "pass"
+    },
+    {
+      "detail": "baseline/held-out schemas and eval runner preserve comparator metadata and API skip flags",
+      "name": "comparator_metadata_contract",
+      "status": "pass"
+    },
+    {
+      "detail": "API portability is excluded from claims; optional lane skip reason is api_backend_not_configured",
+      "name": "api_portability_claim",
+      "status": "warn"
+    },
+    {
+      "detail": "VERIFY_AU_PAPER_RESULTS.sh passed for /home/spqr-admin/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z",
+      "name": "paper_repro_verifier",
+      "status": "pass"
+    }
+  ],
+  "disallowed_claims": [
+    "API/frontier portability claim is explicitly excluded"
+  ],
+  "inputs": {
+    "api_backend_enabled": false,
+    "api_backend_skip_reason": "api_backend_not_configured",
+    "cassius_evidence": "/home/spqr-admin/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/artifacts/cassius_challenge_evidence.jsonl",
+    "claim_api_portability": false,
+    "registry": "/home/spqr-admin/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/inputs/policy_corpus_registry.yaml",
+    "run_dir": "/home/spqr-admin/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z",
+    "tasks": [
+      "/home/spqr-admin/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/inputs/train_failures_100.jsonl",
+      "/home/spqr-admin/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/inputs/heldout_eval_100.jsonl",
+      "/home/spqr-admin/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/inputs/stress_50.jsonl"
+    ]
+  },
+  "next_required_actions": [
+    "Execute the selected paper-evidence run and archive its verified manifests and artifacts."
+  ],
+  "readiness_status": "paper_evidence_ready",
+  "requested_mode": "paper",
+  "warnings": [
+    "registry contains unresolved PENDING refs at entries.au_finance_baseline.aegis_active_law_hash, entries.au_finance_baseline.active_law_epoch_id, entries.au_finance_baseline.active_law_epoch_root, entries.au_finance_baseline.active_law_epoch_sequence_root, entries.au_finance_baseline.active_law_epoch_sequence_index, and 60 more",
+    "EU registry lane remains planned or placeholder and cannot support an EU readiness claim",
+    "API portability is excluded from claims; optional lane skip reason is api_backend_not_configured"
+  ]
+}

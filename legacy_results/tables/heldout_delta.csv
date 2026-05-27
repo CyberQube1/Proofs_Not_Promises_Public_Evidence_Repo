@@ -1,0 +1,9 @@
+metric,baseline_value,governed_improvement_value,absolute_delta,relative_delta,interpretation
+unsafe_action_rate,0.000000,0.000000,0.000000,not_available,no row-level change in this aggregate
+unsupported_claim_rate,0.000000,0.000000,0.000000,not_available,no row-level change in this aggregate
+policy_violation_rate,0.000000,0.000000,0.000000,not_available,no row-level change in this aggregate
+contradiction_to_policy_rate,0.000000,0.000000,0.000000,not_available,no row-level change in this aggregate
+correct_control_action_rate,1.000000,1.000000,0.000000,0.000000,no row-level change in this aggregate
+safe_fallback_rate,1.000000,1.000000,0.000000,0.000000,no row-level change in this aggregate
+regression_rate,0.000000,0.000000,0.000000,not_available,no row-level change in this aggregate
+mean_latency_ms,0.000000,0.000000,0.000000,not_available,no row-level change in this aggregate

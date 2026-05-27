@@ -1,0 +1,78 @@
+{
+  "blocking_gaps": [],
+  "checked_at": "2026-05-22T02:31:19Z",
+  "checks": [
+    {
+      "detail": "all AU paper runner, registry, task, scoring, evidence, and QA inputs exist in this checkout",
+      "name": "repo_inputs",
+      "status": "pass"
+    },
+    {
+      "detail": "required AU paper handoff files are not ignored by git",
+      "name": "git_ignore_boundary",
+      "status": "pass"
+    },
+    {
+      "detail": "AU runner and env source do not read local Praxis/Aegis checkout paths",
+      "name": "runner_repo_local_inputs",
+      "status": "pass"
+    },
+    {
+      "detail": "jsonschema and PyYAML are available for AU validators and readiness checks",
+      "name": "python_validation_dependencies",
+      "status": "pass"
+    },
+    {
+      "detail": "AU task files retain 100 train, 100 held-out, and 50 stress rows",
+      "name": "au_task_counts",
+      "status": "pass"
+    },
+    {
+      "detail": "/home/qube/civitas/.venv/bin/python3 /home/qube/civitas/paper_eval_6.7b/policy_corpora/validate_au_paper_scope.py passed: PASS: au_finance_paper_scope has resolved AU paper authority bindings",
+      "name": "au_authority_validator",
+      "status": "pass"
+    },
+    {
+      "detail": "/home/qube/civitas/.venv/bin/python3 /home/qube/civitas/paper_eval_6.7b/tasks/au_finance_v1/validate_au_taskset.py --task-file /home/qube/civitas/paper_eval_6.7b/tasks/au_finance_v1/train_failures_100.jsonl --task-file /home/qube/civitas/paper_eval_6.7b/tasks/au_finance_v1/heldout_eval_100.jsonl --task-file /home/qube/civitas/paper_eval_6.7b/tasks/au_finance_v1/stress_50.jsonl passed: - train_failures: 100",
+      "name": "au_taskset_validator",
+      "status": "pass"
+    },
+    {
+      "detail": "AU authority hashes and model identity env values are present",
+      "name": "run_env_values",
+      "status": "pass"
+    },
+    {
+      "detail": "MODEL_VERSION is frozen as 95e5aad2e60a",
+      "name": "model_version_frozen",
+      "status": "pass"
+    },
+    {
+      "detail": "cargo, python3, and protoc are available",
+      "name": "run_toolchain",
+      "status": "pass"
+    },
+    {
+      "detail": "pkg-config can resolve fontconfig for Rust plot/font dependencies",
+      "name": "rust_fontconfig_build_dependency",
+      "status": "pass"
+    },
+    {
+      "detail": "Ollama tags endpoint is reachable at http://localhost:11434/api/tags",
+      "name": "ollama_api",
+      "status": "pass"
+    },
+    {
+      "detail": "Ollama model gemma4:e2b-it-q8_0 is installed",
+      "name": "ollama_model",
+      "status": "pass"
+    }
+  ],
+  "next_actions": [
+    "Run RUN_AU_PAPER.sh on this Gemma VM."
+  ],
+  "require_ollama": true,
+  "require_run_env": true,
+  "setup_status": "au_paper_run_env_ready",
+  "warnings": []
+}

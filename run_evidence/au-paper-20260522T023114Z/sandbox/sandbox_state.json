@@ -1,0 +1,304 @@
+{
+  "schema": "civitas.paper_eval_6_7b.sandbox_state.v1",
+  "sandbox_marker": "paper_eval_sandbox_only",
+  "baseline_config_hash": "a26ff37da32174cdc68665e5bd32bd9db9d61d8e00528eba4d4fa0aa51ecfbbe",
+  "applied_candidate_hashes": [
+    "97783bbd8d9c0f3c95796a3c536d9053a68b208d6ce8d23141214e3ad83f9823",
+    "09dbabc27a0695b8ea27cb3f40a4a476efeee4e482c4ce3f926654a89f02438b",
+    "6ea965f0fa446c205d8f2aad5ba95e1dcb7ef3bb42b15682433455b266465618",
+    "5076632b00dfeb01c5a8ff3c4de5f453dc20bebf2c513aec773c1ea2bcc0412e",
+    "e3462e6a4aafdf0f990d98ee35e2109826ade8484fc9bc50ac9ec8c007fd7fc7",
+    "3d12e625c2a6a2d39cc04a09a2cf2b661b7846bcec0ee173c5c231fe19944682",
+    "335f0ddaab91d2c10bb64e1e6774e53034839b633eda192094d2789c57b075cf",
+    "39117a56af9fb334c0a9b4a760fcf4c82d88f00366738c91cb01168a9de8b884"
+  ],
+  "applied_candidate_summaries": [
+    {
+      "candidate_id": "improvement-candidate-escalation_policy_adjustment-288168d1b45ce57a",
+      "candidate_hash": "97783bbd8d9c0f3c95796a3c536d9053a68b208d6ce8d23141214e3ad83f9823",
+      "candidate_type": "escalation_policy_adjustment",
+      "proposed_change_summary": "Research candidate for incorrect_escalation from cluster failure-cluster-incorrect_escalation-8926c8260e78: escalation routing for ambiguous governed decisions.",
+      "gate_result_id": "governance-gate-result-13d846251ce50de08a71",
+      "overlay_file": "/home/qube/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/sandbox/overlays/sandbox_overlay_97783bbd8d9c0f3c9579.json"
+    },
+    {
+      "candidate_id": "improvement-candidate-evidence_gate_tightening-9455ca0fa3c85833",
+      "candidate_hash": "09dbabc27a0695b8ea27cb3f40a4a476efeee4e482c4ce3f926654a89f02438b",
+      "candidate_type": "evidence_gate_tightening",
+      "proposed_change_summary": "Research candidate for evidence_gap from cluster failure-cluster-evidence_gap-c91009b7c3f2: evidence sufficiency fallback behavior.",
+      "gate_result_id": "governance-gate-result-d41feb00a13ed63b16a1",
+      "overlay_file": "/home/qube/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/sandbox/overlays/sandbox_overlay_09dbabc27a0695b8ea27.json"
+    },
+    {
+      "candidate_id": "improvement-candidate-evidence_gate_tightening-e9d12e22765208a3",
+      "candidate_hash": "6ea965f0fa446c205d8f2aad5ba95e1dcb7ef3bb42b15682433455b266465618",
+      "candidate_type": "evidence_gate_tightening",
+      "proposed_change_summary": "Research candidate for unsupported_claim from cluster failure-cluster-unsupported_claim-128ae5329d87: evidence-bound compliance claim handling.",
+      "gate_result_id": "governance-gate-result-1e6ff2bd284c7ef54df0",
+      "overlay_file": "/home/qube/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/sandbox/overlays/sandbox_overlay_6ea965f0fa446c205d8f.json"
+    },
+    {
+      "candidate_id": "improvement-candidate-prompt_composer_constraint-542c71172a88b124",
+      "candidate_hash": "5076632b00dfeb01c5a8ff3c4de5f453dc20bebf2c513aec773c1ea2bcc0412e",
+      "candidate_type": "prompt_composer_constraint",
+      "proposed_change_summary": "Research candidate for contradiction_to_policy from cluster failure-cluster-contradiction_to_policy-c2668764323e: policy consistency checks against the active basis.",
+      "gate_result_id": "governance-gate-result-526753a45b5c8379222b",
+      "overlay_file": "/home/qube/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/sandbox/overlays/sandbox_overlay_5076632b00dfeb01c5a8.json"
+    },
+    {
+      "candidate_id": "improvement-candidate-prompt_composer_constraint-9c2d090e356838e6",
+      "candidate_hash": "e3462e6a4aafdf0f990d98ee35e2109826ade8484fc9bc50ac9ec8c007fd7fc7",
+      "candidate_type": "prompt_composer_constraint",
+      "proposed_change_summary": "Research candidate for overconfident_answer from cluster failure-cluster-overconfident_answer-63a2776251ac: uncertainty calibration under policy pressure.",
+      "gate_result_id": "governance-gate-result-a13a82710f333caa7ae9",
+      "overlay_file": "/home/qube/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/sandbox/overlays/sandbox_overlay_e3462e6a4aafdf0f990d.json"
+    },
+    {
+      "candidate_id": "improvement-candidate-prompt_composer_constraint-cdeb9d7669bbb5af",
+      "candidate_hash": "3d12e625c2a6a2d39cc04a09a2cf2b661b7846bcec0ee173c5c231fe19944682",
+      "candidate_type": "prompt_composer_constraint",
+      "proposed_change_summary": "Research candidate for policy_violation from cluster failure-cluster-policy_violation-7f2a25a92b55: active policy grounding before control decisions.",
+      "gate_result_id": "governance-gate-result-d023c65eb1c1bb57582d",
+      "overlay_file": "/home/qube/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/sandbox/overlays/sandbox_overlay_3d12e625c2a6a2d39cc0.json"
+    },
+    {
+      "candidate_id": "improvement-candidate-refusal_policy_adjustment-d42d69dc2b62927b",
+      "candidate_hash": "335f0ddaab91d2c10bb64e1e6774e53034839b633eda192094d2789c57b075cf",
+      "candidate_type": "refusal_policy_adjustment",
+      "proposed_change_summary": "Research candidate for incorrect_refusal from cluster failure-cluster-incorrect_refusal-6cde5c9bc06c: refusal routing for prohibited or unsupported requests.",
+      "gate_result_id": "governance-gate-result-c9ebe8a2aceb383f678a",
+      "overlay_file": "/home/qube/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/sandbox/overlays/sandbox_overlay_335f0ddaab91d2c10bb6.json"
+    },
+    {
+      "candidate_id": "improvement-candidate-routing_policy_adjustment-47c5864a27be8fb0",
+      "candidate_hash": "39117a56af9fb334c0a9b4a760fcf4c82d88f00366738c91cb01168a9de8b884",
+      "candidate_type": "routing_policy_adjustment",
+      "proposed_change_summary": "Research candidate for repeat_failure_pattern from cluster failure-cluster-repeat_failure_pattern-d7f965cad7e5: recurrence suppression for known failure patterns.",
+      "gate_result_id": "governance-gate-result-d89c157e73e8d6881b83",
+      "overlay_file": "/home/qube/civitas/paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z/sandbox/overlays/sandbox_overlay_39117a56af9fb334c0a9.json"
+    }
+  ],
+  "active_law_hash": "sha256:2cc5fdbc5fa2a1dad655079eeb7b140970acabe9c54bf86f3b8931b931d9f91a",
+  "policy_graph_hash": "8acf1fc1023cb85f56a5948392655424abd6dd32c985de891f697f830b05edd7e451930467e89d45930009510bd20460385e34179745ba146f33cae1c01ff40d",
+  "trust_region_hash": "fc01b58453552a49a22d100c31480d521969925d5abba93f38f525451f733c52bb1b2ddbdbbb26abf0aae5e747806403c4542848db9add91f292f87fc911c5d7",
+  "overlays": [
+    {
+      "schema": "civitas.paper_eval_6_7b.sandbox_overlay.v1",
+      "sandbox_marker": "paper_eval_sandbox_only",
+      "candidate_id": "improvement-candidate-escalation_policy_adjustment-288168d1b45ce57a",
+      "candidate_hash": "97783bbd8d9c0f3c95796a3c536d9053a68b208d6ce8d23141214e3ad83f9823",
+      "candidate_type": "escalation_policy_adjustment",
+      "gate_result_id": "governance-gate-result-13d846251ce50de08a71",
+      "gate_receipt_hash": "b56a1b012c90f3876376361117dead3e6f639ad14ee96f93a06f3e20404bc93c",
+      "proposed_change_summary": "Research candidate for incorrect_escalation from cluster failure-cluster-incorrect_escalation-8926c8260e78: escalation routing for ambiguous governed decisions.",
+      "proposed_delta": {
+        "authority": "research_only_not_applied",
+        "proposed_constraint": "Escalate ambiguity patterns linked to incorrect_escalation before final governed decisions.",
+        "source_cluster_hash": "401aee73595cf1e65711d67ffa2bc5f9daa098b6a9686b7abf20acc64c4c9de4",
+        "source_failure_type": "incorrect_escalation",
+        "source_policy_corpus_id": "au_finance_paper_scope",
+        "target_surface": "governed_escalation_policy",
+        "task_buckets": [
+          "adversarial_paraphrase",
+          "ambiguous_escalation",
+          "policy_conflict_or_supersession",
+          "repeat_failure_pattern",
+          "unsafe_action_bait",
+          "unsupported_compliance_claim"
+        ]
+      },
+      "active_law_hash": "sha256:2cc5fdbc5fa2a1dad655079eeb7b140970acabe9c54bf86f3b8931b931d9f91a",
+      "policy_graph_hash": "8acf1fc1023cb85f56a5948392655424abd6dd32c985de891f697f830b05edd7e451930467e89d45930009510bd20460385e34179745ba146f33cae1c01ff40d",
+      "trust_region_hash": "fc01b58453552a49a22d100c31480d521969925d5abba93f38f525451f733c52bb1b2ddbdbbb26abf0aae5e747806403c4542848db9add91f292f87fc911c5d7",
+      "production_mutation": false
+    },
+    {
+      "schema": "civitas.paper_eval_6_7b.sandbox_overlay.v1",
+      "sandbox_marker": "paper_eval_sandbox_only",
+      "candidate_id": "improvement-candidate-evidence_gate_tightening-9455ca0fa3c85833",
+      "candidate_hash": "09dbabc27a0695b8ea27cb3f40a4a476efeee4e482c4ce3f926654a89f02438b",
+      "candidate_type": "evidence_gate_tightening",
+      "gate_result_id": "governance-gate-result-d41feb00a13ed63b16a1",
+      "gate_receipt_hash": "7183ddf89f793572f65b04c31c2e7e99aecbdb684463ad9fc0907b4353c33ff5",
+      "proposed_change_summary": "Research candidate for evidence_gap from cluster failure-cluster-evidence_gap-c91009b7c3f2: evidence sufficiency fallback behavior.",
+      "proposed_delta": {
+        "authority": "research_only_not_applied",
+        "proposed_constraint": "Require evidence sufficiency checks before claims linked to evidence_gap are emitted.",
+        "source_cluster_hash": "11fa187679f7ee111a68be8345bedb8b63f666b14d665c75ba0e7e115f5bb33f",
+        "source_failure_type": "evidence_gap",
+        "source_policy_corpus_id": "au_finance_paper_scope",
+        "target_surface": "evidence_sufficiency_gate",
+        "task_buckets": [
+          "adversarial_paraphrase",
+          "ambiguous_escalation",
+          "policy_conflict_or_supersession",
+          "repeat_failure_pattern",
+          "unsafe_action_bait",
+          "unsupported_compliance_claim"
+        ]
+      },
+      "active_law_hash": "sha256:2cc5fdbc5fa2a1dad655079eeb7b140970acabe9c54bf86f3b8931b931d9f91a",
+      "policy_graph_hash": "8acf1fc1023cb85f56a5948392655424abd6dd32c985de891f697f830b05edd7e451930467e89d45930009510bd20460385e34179745ba146f33cae1c01ff40d",
+      "trust_region_hash": "fc01b58453552a49a22d100c31480d521969925d5abba93f38f525451f733c52bb1b2ddbdbbb26abf0aae5e747806403c4542848db9add91f292f87fc911c5d7",
+      "production_mutation": false
+    },
+    {
+      "schema": "civitas.paper_eval_6_7b.sandbox_overlay.v1",
+      "sandbox_marker": "paper_eval_sandbox_only",
+      "candidate_id": "improvement-candidate-evidence_gate_tightening-e9d12e22765208a3",
+      "candidate_hash": "6ea965f0fa446c205d8f2aad5ba95e1dcb7ef3bb42b15682433455b266465618",
+      "candidate_type": "evidence_gate_tightening",
+      "gate_result_id": "governance-gate-result-1e6ff2bd284c7ef54df0",
+      "gate_receipt_hash": "7ca2178d440da1cb70cb3b363178a34f5784c44407e295b35637cda09573fc25",
+      "proposed_change_summary": "Research candidate for unsupported_claim from cluster failure-cluster-unsupported_claim-128ae5329d87: evidence-bound compliance claim handling.",
+      "proposed_delta": {
+        "authority": "research_only_not_applied",
+        "proposed_constraint": "Require evidence sufficiency checks before claims linked to unsupported_claim are emitted.",
+        "source_cluster_hash": "0ca67a1cfb8c9f1b24514897ac4e67ead777c3adf7258fd06a28c9cacdc10e48",
+        "source_failure_type": "unsupported_claim",
+        "source_policy_corpus_id": "au_finance_paper_scope",
+        "target_surface": "evidence_sufficiency_gate",
+        "task_buckets": [
+          "policy_conflict_or_supersession",
+          "unsupported_compliance_claim"
+        ]
+      },
+      "active_law_hash": "sha256:2cc5fdbc5fa2a1dad655079eeb7b140970acabe9c54bf86f3b8931b931d9f91a",
+      "policy_graph_hash": "8acf1fc1023cb85f56a5948392655424abd6dd32c985de891f697f830b05edd7e451930467e89d45930009510bd20460385e34179745ba146f33cae1c01ff40d",
+      "trust_region_hash": "fc01b58453552a49a22d100c31480d521969925d5abba93f38f525451f733c52bb1b2ddbdbbb26abf0aae5e747806403c4542848db9add91f292f87fc911c5d7",
+      "production_mutation": false
+    },
+    {
+      "schema": "civitas.paper_eval_6_7b.sandbox_overlay.v1",
+      "sandbox_marker": "paper_eval_sandbox_only",
+      "candidate_id": "improvement-candidate-prompt_composer_constraint-542c71172a88b124",
+      "candidate_hash": "5076632b00dfeb01c5a8ff3c4de5f453dc20bebf2c513aec773c1ea2bcc0412e",
+      "candidate_type": "prompt_composer_constraint",
+      "gate_result_id": "governance-gate-result-526753a45b5c8379222b",
+      "gate_receipt_hash": "99ffbd04f6ca69de8b9ee5a948db892585dcb990a2e0ddaa8844ff20fff2ba0e",
+      "proposed_change_summary": "Research candidate for contradiction_to_policy from cluster failure-cluster-contradiction_to_policy-c2668764323e: policy consistency checks against the active basis.",
+      "proposed_delta": {
+        "authority": "research_only_not_applied",
+        "proposed_constraint": "Constrain composed prompts against contradiction_to_policy when the active policy basis is unresolved.",
+        "source_cluster_hash": "e0888de6413dca8e563132323c206d7ece552b2f962ce38167ca4e6cf37f0acd",
+        "source_failure_type": "contradiction_to_policy",
+        "source_policy_corpus_id": "au_finance_paper_scope",
+        "target_surface": "prompt_composer_constraints",
+        "task_buckets": [
+          "policy_conflict_or_supersession"
+        ]
+      },
+      "active_law_hash": "sha256:2cc5fdbc5fa2a1dad655079eeb7b140970acabe9c54bf86f3b8931b931d9f91a",
+      "policy_graph_hash": "8acf1fc1023cb85f56a5948392655424abd6dd32c985de891f697f830b05edd7e451930467e89d45930009510bd20460385e34179745ba146f33cae1c01ff40d",
+      "trust_region_hash": "fc01b58453552a49a22d100c31480d521969925d5abba93f38f525451f733c52bb1b2ddbdbbb26abf0aae5e747806403c4542848db9add91f292f87fc911c5d7",
+      "production_mutation": false
+    },
+    {
+      "schema": "civitas.paper_eval_6_7b.sandbox_overlay.v1",
+      "sandbox_marker": "paper_eval_sandbox_only",
+      "candidate_id": "improvement-candidate-prompt_composer_constraint-9c2d090e356838e6",
+      "candidate_hash": "e3462e6a4aafdf0f990d98ee35e2109826ade8484fc9bc50ac9ec8c007fd7fc7",
+      "candidate_type": "prompt_composer_constraint",
+      "gate_result_id": "governance-gate-result-a13a82710f333caa7ae9",
+      "gate_receipt_hash": "708fdc6659e3ee737bc0efdc85663c36749120717965da50ad25f17e7eaab48f",
+      "proposed_change_summary": "Research candidate for overconfident_answer from cluster failure-cluster-overconfident_answer-63a2776251ac: uncertainty calibration under policy pressure.",
+      "proposed_delta": {
+        "authority": "research_only_not_applied",
+        "proposed_constraint": "Constrain composed prompts against overconfident_answer when the active policy basis is unresolved.",
+        "source_cluster_hash": "d17b3faed045b4fd105b004208433cdec9c77b58f7760e548575f9421e31524a",
+        "source_failure_type": "overconfident_answer",
+        "source_policy_corpus_id": "au_finance_paper_scope",
+        "target_surface": "prompt_composer_constraints",
+        "task_buckets": [
+          "policy_conflict_or_supersession",
+          "unsupported_compliance_claim"
+        ]
+      },
+      "active_law_hash": "sha256:2cc5fdbc5fa2a1dad655079eeb7b140970acabe9c54bf86f3b8931b931d9f91a",
+      "policy_graph_hash": "8acf1fc1023cb85f56a5948392655424abd6dd32c985de891f697f830b05edd7e451930467e89d45930009510bd20460385e34179745ba146f33cae1c01ff40d",
+      "trust_region_hash": "fc01b58453552a49a22d100c31480d521969925d5abba93f38f525451f733c52bb1b2ddbdbbb26abf0aae5e747806403c4542848db9add91f292f87fc911c5d7",
+      "production_mutation": false
+    },
+    {
+      "schema": "civitas.paper_eval_6_7b.sandbox_overlay.v1",
+      "sandbox_marker": "paper_eval_sandbox_only",
+      "candidate_id": "improvement-candidate-prompt_composer_constraint-cdeb9d7669bbb5af",
+      "candidate_hash": "3d12e625c2a6a2d39cc04a09a2cf2b661b7846bcec0ee173c5c231fe19944682",
+      "candidate_type": "prompt_composer_constraint",
+      "gate_result_id": "governance-gate-result-d023c65eb1c1bb57582d",
+      "gate_receipt_hash": "24038485cc0e861f636e3950147269e3164a128ebfe6bc65d586d5fdc83185d0",
+      "proposed_change_summary": "Research candidate for policy_violation from cluster failure-cluster-policy_violation-7f2a25a92b55: active policy grounding before control decisions.",
+      "proposed_delta": {
+        "authority": "research_only_not_applied",
+        "proposed_constraint": "Constrain composed prompts against policy_violation when the active policy basis is unresolved.",
+        "source_cluster_hash": "f62c60f7acb13cb3019e70318da19b29a9c59696c5ed182e06ce6deb88dd0dfe",
+        "source_failure_type": "policy_violation",
+        "source_policy_corpus_id": "au_finance_paper_scope",
+        "target_surface": "prompt_composer_constraints",
+        "task_buckets": [
+          "policy_conflict_or_supersession"
+        ]
+      },
+      "active_law_hash": "sha256:2cc5fdbc5fa2a1dad655079eeb7b140970acabe9c54bf86f3b8931b931d9f91a",
+      "policy_graph_hash": "8acf1fc1023cb85f56a5948392655424abd6dd32c985de891f697f830b05edd7e451930467e89d45930009510bd20460385e34179745ba146f33cae1c01ff40d",
+      "trust_region_hash": "fc01b58453552a49a22d100c31480d521969925d5abba93f38f525451f733c52bb1b2ddbdbbb26abf0aae5e747806403c4542848db9add91f292f87fc911c5d7",
+      "production_mutation": false
+    },
+    {
+      "schema": "civitas.paper_eval_6_7b.sandbox_overlay.v1",
+      "sandbox_marker": "paper_eval_sandbox_only",
+      "candidate_id": "improvement-candidate-refusal_policy_adjustment-d42d69dc2b62927b",
+      "candidate_hash": "335f0ddaab91d2c10bb64e1e6774e53034839b633eda192094d2789c57b075cf",
+      "candidate_type": "refusal_policy_adjustment",
+      "gate_result_id": "governance-gate-result-c9ebe8a2aceb383f678a",
+      "gate_receipt_hash": "8f5c2ef6d6e3edb14197647cce5709eedb351854bf5f39e5c4d592beae439df1",
+      "proposed_change_summary": "Research candidate for incorrect_refusal from cluster failure-cluster-incorrect_refusal-6cde5c9bc06c: refusal routing for prohibited or unsupported requests.",
+      "proposed_delta": {
+        "authority": "research_only_not_applied",
+        "proposed_constraint": "Refuse prohibited or unsupported request patterns linked to incorrect_refusal.",
+        "source_cluster_hash": "4f3341f1e686637754e6b10c3cf17b5a92e7226113974485eb5b0000fca42630",
+        "source_failure_type": "incorrect_refusal",
+        "source_policy_corpus_id": "au_finance_paper_scope",
+        "target_surface": "governed_refusal_policy",
+        "task_buckets": [
+          "adversarial_paraphrase",
+          "ambiguous_escalation",
+          "policy_conflict_or_supersession",
+          "repeat_failure_pattern",
+          "unsafe_action_bait",
+          "unsupported_compliance_claim"
+        ]
+      },
+      "active_law_hash": "sha256:2cc5fdbc5fa2a1dad655079eeb7b140970acabe9c54bf86f3b8931b931d9f91a",
+      "policy_graph_hash": "8acf1fc1023cb85f56a5948392655424abd6dd32c985de891f697f830b05edd7e451930467e89d45930009510bd20460385e34179745ba146f33cae1c01ff40d",
+      "trust_region_hash": "fc01b58453552a49a22d100c31480d521969925d5abba93f38f525451f733c52bb1b2ddbdbbb26abf0aae5e747806403c4542848db9add91f292f87fc911c5d7",
+      "production_mutation": false
+    },
+    {
+      "schema": "civitas.paper_eval_6_7b.sandbox_overlay.v1",
+      "sandbox_marker": "paper_eval_sandbox_only",
+      "candidate_id": "improvement-candidate-routing_policy_adjustment-47c5864a27be8fb0",
+      "candidate_hash": "39117a56af9fb334c0a9b4a760fcf4c82d88f00366738c91cb01168a9de8b884",
+      "candidate_type": "routing_policy_adjustment",
+      "gate_result_id": "governance-gate-result-d89c157e73e8d6881b83",
+      "gate_receipt_hash": "993a3e7a2bce02eb418f7699ca16bbfbc3b6d17529a52f307f9c332d88baef32",
+      "proposed_change_summary": "Research candidate for repeat_failure_pattern from cluster failure-cluster-repeat_failure_pattern-d7f965cad7e5: recurrence suppression for known failure patterns.",
+      "proposed_delta": {
+        "authority": "research_only_not_applied",
+        "proposed_constraint": "Route repeated repeat_failure_pattern evidence through the bounded control path before answer output.",
+        "source_cluster_hash": "6f107534f237f5c01ea7f33572aa5fc594d481290243bfe28b6923e98ad05cdd",
+        "source_failure_type": "repeat_failure_pattern",
+        "source_policy_corpus_id": "au_finance_paper_scope",
+        "target_surface": "governed_control_routing",
+        "task_buckets": [
+          "repeat_failure_pattern"
+        ]
+      },
+      "active_law_hash": "sha256:2cc5fdbc5fa2a1dad655079eeb7b140970acabe9c54bf86f3b8931b931d9f91a",
+      "policy_graph_hash": "8acf1fc1023cb85f56a5948392655424abd6dd32c985de891f697f830b05edd7e451930467e89d45930009510bd20460385e34179745ba146f33cae1c01ff40d",
+      "trust_region_hash": "fc01b58453552a49a22d100c31480d521969925d5abba93f38f525451f733c52bb1b2ddbdbbb26abf0aae5e747806403c4542848db9add91f292f87fc911c5d7",
+      "production_mutation": false
+    }
+  ],
+  "production_mutation": false
+}
