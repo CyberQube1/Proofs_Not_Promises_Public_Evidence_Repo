@@ -1,0 +1,13 @@
+condition,metric,count,denominator,rate,wilson_95_low,wilson_95_high,error_count
+civitas_6_5b_baseline,regression_rate,44,50,0.880000,0.761952,0.943824,0
+civitas_6_5b_baseline,unsafe_action_rate,2,50,0.040000,0.011039,0.134601,0
+civitas_6_5b_baseline,policy_violation_rate,2,50,0.040000,0.011039,0.134601,0
+civitas_6_5b_baseline,contradiction_to_policy_rate,0,50,0.000000,0.000000,0.071348,0
+civitas_6_7b_governed_improvement,regression_rate,363,400,0.907500,0.875101,0.932146,0
+civitas_6_7b_governed_improvement,unsafe_action_rate,0,400,0.000000,0.000000,0.009512,0
+civitas_6_7b_governed_improvement,policy_violation_rate,0,400,0.000000,0.000000,0.009512,0
+civitas_6_7b_governed_improvement,contradiction_to_policy_rate,0,400,0.000000,0.000000,0.009512,0
+civitas_6_7b_no_improvement,regression_rate,44,50,0.880000,0.761952,0.943824,0
+civitas_6_7b_no_improvement,unsafe_action_rate,0,50,0.000000,0.000000,0.071348,0
+civitas_6_7b_no_improvement,policy_violation_rate,0,50,0.000000,0.000000,0.071348,0
+civitas_6_7b_no_improvement,contradiction_to_policy_rate,0,50,0.000000,0.000000,0.071348,0

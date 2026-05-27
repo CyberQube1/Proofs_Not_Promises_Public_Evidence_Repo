@@ -1,0 +1,96 @@
+schema: civitas.paper_eval_6_7b.au_finance_source_map.v1
+paper_corpus_id: au_finance_paper_scope
+authority_binding:
+  active_law_hash: sha256:2cc5fdbc5fa2a1dad655079eeb7b140970acabe9c54bf86f3b8931b931d9f91a
+  active_law_epoch_id: ale_36e8fca1efdb131047beb98f9fa426a4
+  policy_graph_hash: 8acf1fc1023cb85f56a5948392655424abd6dd32c985de891f697f830b05edd7e451930467e89d45930009510bd20460385e34179745ba146f33cae1c01ff40d
+  trust_region_hash: fc01b58453552a49a22d100c31480d521969925d5abba93f38f525451f733c52bb1b2ddbdbbb26abf0aae5e747806403c4542848db9add91f292f87fc911c5d7
+  praxis_bundle_id: br_1e6d12c254a3
+  baseline_slug: baseline-au-finance
+  baseline_bundle_version: 10cf217f862c
+scope_rules:
+  - Use only AU finance baseline sources listed in this map for final paper task provenance.
+  - APRA and ASIC references are source subsets contained by the frozen AU finance baseline.
+  - Do not author EU rows, standalone APRA corpus rows, or standalone ASIC corpus rows for v1.
+  - Do not copy source policy documents into the paper-eval tree.
+source_families:
+  apra_cps234_information_security:
+    regulator: APRA
+    task_scope: >-
+      Information-security governance and evidence-control scenarios grounded
+      by CPS 234 source indexes contained in the AU finance baseline.
+    policy_source_refs:
+      - "s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_stem/APRA CPS 234 Information Security.index.json"
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_stem/cps_234_july_2019_for_public_release.index.json
+    source_document_refs:
+      - "s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_doc/apra cps 234 information security.index.json"
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_doc/cps_234_july_2019_for_public_release.index.json
+    allowed_buckets:
+      - unsafe_action_bait
+      - unsupported_compliance_claim
+      - ambiguous_escalation
+      - policy_conflict_or_supersession
+      - adversarial_paraphrase
+      - repeat_failure_pattern
+    authoring_notes:
+      - Probe evidence-backed control posture, security assurance, incident facts, control gaps, and third-party review pressure.
+      - Do not ask for CPS 234 policy recall alone.
+  asic_rg234_advertising_and_disclosure:
+    regulator: ASIC
+    task_scope: >-
+      Advertising, disclosure, and overclaim pressure scenarios grounded by
+      RG 234 source indexes contained in the AU finance baseline.
+    policy_source_refs:
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_stem/rg234-published-15-november-2012-20211008.index.json
+    source_document_refs:
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_doc/rg234_published_15_november_2012_20211008.index.json
+    allowed_buckets:
+      - unsafe_action_bait
+      - unsupported_compliance_claim
+      - ambiguous_escalation
+      - policy_conflict_or_supersession
+      - adversarial_paraphrase
+      - repeat_failure_pattern
+    authoring_notes:
+      - Probe unsupported public assurance, promotional wording pressure, missing review evidence, and controlled refusal/escalation.
+      - Do not make final benchmark rows simple section retrieval.
+  asic_rg271_dispute_resolution:
+    regulator: ASIC
+    task_scope: >-
+      Complaint and dispute-resolution control scenarios grounded by RG 271
+      source indexes contained in the AU finance baseline.
+    policy_source_refs:
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_stem/rg271-published-2-september-2021.index.json
+    source_document_refs:
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_doc/rg271_published_2_september_2021.index.json
+    allowed_buckets:
+      - unsafe_action_bait
+      - unsupported_compliance_claim
+      - ambiguous_escalation
+      - policy_conflict_or_supersession
+      - adversarial_paraphrase
+      - repeat_failure_pattern
+    authoring_notes:
+      - Probe complaint-handling timing, missing facts, misleading closure pressure, and escalation under uncertain authority.
+  asic_rg274_design_and_distribution:
+    regulator: ASIC
+    task_scope: >-
+      Design-and-distribution control scenarios grounded by RG 274 source
+      indexes contained in the AU finance baseline.
+    policy_source_refs:
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_stem/rg274-published-10-september-2024.index.json
+    source_document_refs:
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_doc/rg274_published_10_september_2024.index.json
+    allowed_buckets:
+      - unsafe_action_bait
+      - unsupported_compliance_claim
+      - ambiguous_escalation
+      - policy_conflict_or_supersession
+      - adversarial_paraphrase
+      - repeat_failure_pattern
+    authoring_notes:
+      - Probe distribution approval pressure, target-market evidence gaps, stale review basis, and refusal of unsupported release claims.
+baseline_metadata_refs:
+  - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/governance/manifest.json
+  - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/governance/publication.json
+  - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/active_docs.baseline-au-finance.json
