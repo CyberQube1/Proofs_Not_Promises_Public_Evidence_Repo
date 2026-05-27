@@ -1,10 +1,12 @@
 # Civitas 6.7B Public Evidence Pack
 
-This directory is the public evidence package for the Civitas 6.7B AU paper
+This directory is the public evidence package for the Proofs, Not Promises: Governed Candidate Improvement for Agent
+Control Runtimes: Civitas 6.7B as an Evidence-Bound, Cassius-Challenged, Sandbox-Contained Improvement Lifecycle paper
 claim. It is a reproduction-oriented derivative of the locked local evidence
-bundle:
+bundle: https://doi.org/10.5281/zenodo.20405355 
 
 `paper_eval_6.7b/repro/runs/au-paper-20260522T023114Z`
+
 
 The pack is designed to support external inspection of the paper's bounded
 systems claim and to make the AU run reproducible for a reviewer who also has
