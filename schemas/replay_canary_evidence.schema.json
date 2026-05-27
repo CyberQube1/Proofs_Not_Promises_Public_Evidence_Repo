@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civitas.internal/paper_eval_6.7b/schemas/replay_canary_evidence.schema.json",
+  "title": "Civitas67BReplayCanaryEvidence",
+  "description": "Post-sandbox replay/canary research evidence bound to one applied candidate.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_hash",
+    "run_id",
+    "replay_status",
+    "canary_status",
+    "regression_count",
+    "failure_count",
+    "artifact_refs",
+    "summary",
+    "receipt_hash",
+    "evaluated_at"
+  ],
+  "properties": {
+    "candidate_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "run_id": { "type": "string", "minLength": 1, "maxLength": 280 },
+    "replay_status": {
+      "type": "string",
+      "enum": [ "passed", "failed", "not_available" ]
+    },
+    "canary_status": {
+      "type": "string",
+      "enum": [ "passed", "failed", "not_available" ]
+    },
+    "regression_count": { "type": "integer", "minimum": 0 },
+    "failure_count": { "type": "integer", "minimum": 0 },
+    "artifact_refs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "maxLength": 1200 }
+    },
+    "summary": { "type": "string", "minLength": 1, "maxLength": 12000 },
+    "receipt_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "evaluated_at": { "type": "string", "format": "date-time" }
+  }
+}

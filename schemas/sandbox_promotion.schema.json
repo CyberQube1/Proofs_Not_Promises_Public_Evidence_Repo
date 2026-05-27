@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civitas.internal/paper_eval_6.7b/schemas/sandbox_promotion.schema.json",
+  "title": "Civitas67BSandboxPromotion",
+  "description": "One sandbox-only promotion simulator row for an approved Civitas 6.7B improvement candidate.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sandbox_promotion_id",
+    "candidate_id",
+    "candidate_hash",
+    "gate_result_id",
+    "gate_receipt_hash",
+    "sandbox_config_hash_before",
+    "sandbox_config_hash_after",
+    "applied_delta_summary",
+    "applied_files",
+    "sandbox_output_dir",
+    "sandbox_only",
+    "production_mutation",
+    "promotion_status",
+    "failure_reason",
+    "promotion_timestamp",
+    "promotion_receipt_hash"
+  ],
+  "properties": {
+    "sandbox_promotion_id": { "type": "string", "minLength": 1, "maxLength": 280 },
+    "candidate_id": { "type": "string", "minLength": 1, "maxLength": 280 },
+    "candidate_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "gate_result_id": { "type": "string", "minLength": 1, "maxLength": 320 },
+    "gate_receipt_hash": {
+      "type": "string",
+      "description": "Gate receipt SHA3-256, or explicit unavailable marker when no gate row matches.",
+      "minLength": 1,
+      "maxLength": 320
+    },
+    "sandbox_config_hash_before": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "sandbox_config_hash_after": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "applied_delta_summary": { "type": "string", "minLength": 1, "maxLength": 12000 },
+    "applied_files": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "maxLength": 2000 }
+    },
+    "sandbox_output_dir": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "sandbox_only": { "const": true },
+    "production_mutation": { "const": false },
+    "promotion_status": {
+      "type": "string",
+      "enum": [
+        "applied_to_sandbox",
+        "skipped_rejected",
+        "failed_to_apply"
+      ]
+    },
+    "failure_reason": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "promotion_timestamp": { "type": "string", "format": "date-time" },
+    "promotion_receipt_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  }
+}

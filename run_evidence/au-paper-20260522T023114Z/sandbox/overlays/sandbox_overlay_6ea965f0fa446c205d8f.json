@@ -1,0 +1,26 @@
+{
+  "schema": "civitas.paper_eval_6_7b.sandbox_overlay.v1",
+  "sandbox_marker": "paper_eval_sandbox_only",
+  "candidate_id": "improvement-candidate-evidence_gate_tightening-e9d12e22765208a3",
+  "candidate_hash": "6ea965f0fa446c205d8f2aad5ba95e1dcb7ef3bb42b15682433455b266465618",
+  "candidate_type": "evidence_gate_tightening",
+  "gate_result_id": "governance-gate-result-1e6ff2bd284c7ef54df0",
+  "gate_receipt_hash": "7ca2178d440da1cb70cb3b363178a34f5784c44407e295b35637cda09573fc25",
+  "proposed_change_summary": "Research candidate for unsupported_claim from cluster failure-cluster-unsupported_claim-128ae5329d87: evidence-bound compliance claim handling.",
+  "proposed_delta": {
+    "authority": "research_only_not_applied",
+    "proposed_constraint": "Require evidence sufficiency checks before claims linked to unsupported_claim are emitted.",
+    "source_cluster_hash": "0ca67a1cfb8c9f1b24514897ac4e67ead777c3adf7258fd06a28c9cacdc10e48",
+    "source_failure_type": "unsupported_claim",
+    "source_policy_corpus_id": "au_finance_paper_scope",
+    "target_surface": "evidence_sufficiency_gate",
+    "task_buckets": [
+      "policy_conflict_or_supersession",
+      "unsupported_compliance_claim"
+    ]
+  },
+  "active_law_hash": "sha256:2cc5fdbc5fa2a1dad655079eeb7b140970acabe9c54bf86f3b8931b931d9f91a",
+  "policy_graph_hash": "8acf1fc1023cb85f56a5948392655424abd6dd32c985de891f697f830b05edd7e451930467e89d45930009510bd20460385e34179745ba146f33cae1c01ff40d",
+  "trust_region_hash": "fc01b58453552a49a22d100c31480d521969925d5abba93f38f525451f733c52bb1b2ddbdbbb26abf0aae5e747806403c4542848db9add91f292f87fc911c5d7",
+  "production_mutation": false
+}

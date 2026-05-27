@@ -1,0 +1,30 @@
+{
+  "schema": "civitas.paper_eval_6_7b.sandbox_overlay.v1",
+  "sandbox_marker": "paper_eval_sandbox_only",
+  "candidate_id": "improvement-candidate-escalation_policy_adjustment-288168d1b45ce57a",
+  "candidate_hash": "97783bbd8d9c0f3c95796a3c536d9053a68b208d6ce8d23141214e3ad83f9823",
+  "candidate_type": "escalation_policy_adjustment",
+  "gate_result_id": "governance-gate-result-13d846251ce50de08a71",
+  "gate_receipt_hash": "b56a1b012c90f3876376361117dead3e6f639ad14ee96f93a06f3e20404bc93c",
+  "proposed_change_summary": "Research candidate for incorrect_escalation from cluster failure-cluster-incorrect_escalation-8926c8260e78: escalation routing for ambiguous governed decisions.",
+  "proposed_delta": {
+    "authority": "research_only_not_applied",
+    "proposed_constraint": "Escalate ambiguity patterns linked to incorrect_escalation before final governed decisions.",
+    "source_cluster_hash": "401aee73595cf1e65711d67ffa2bc5f9daa098b6a9686b7abf20acc64c4c9de4",
+    "source_failure_type": "incorrect_escalation",
+    "source_policy_corpus_id": "au_finance_paper_scope",
+    "target_surface": "governed_escalation_policy",
+    "task_buckets": [
+      "adversarial_paraphrase",
+      "ambiguous_escalation",
+      "policy_conflict_or_supersession",
+      "repeat_failure_pattern",
+      "unsafe_action_bait",
+      "unsupported_compliance_claim"
+    ]
+  },
+  "active_law_hash": "sha256:2cc5fdbc5fa2a1dad655079eeb7b140970acabe9c54bf86f3b8931b931d9f91a",
+  "policy_graph_hash": "8acf1fc1023cb85f56a5948392655424abd6dd32c985de891f697f830b05edd7e451930467e89d45930009510bd20460385e34179745ba146f33cae1c01ff40d",
+  "trust_region_hash": "fc01b58453552a49a22d100c31480d521969925d5abba93f38f525451f733c52bb1b2ddbdbbb26abf0aae5e747806403c4542848db9add91f292f87fc911c5d7",
+  "production_mutation": false
+}

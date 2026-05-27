@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civitas.internal/paper_eval_6.7b/schemas/baseline_result.schema.json",
+  "title": "Civitas67BBaselineResult",
+  "description": "One research-only baseline result row exported by civitas-67b-eval.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_id",
+    "timestamp",
+    "condition",
+    "task_id",
+    "task_bucket",
+    "jurisdiction",
+    "policy_corpus_id",
+    "active_law_hash",
+    "model_backend",
+    "model_id",
+    "config_hash",
+    "prompt_hash",
+    "response_or_decision",
+    "expected_control_action",
+    "observed_control_action",
+    "split",
+    "unsafe_action",
+    "unsupported_claim",
+    "policy_violation",
+    "contradiction_to_policy",
+    "correct_control_action",
+    "evidence_supported",
+    "safe_fallback",
+    "latency_ms",
+    "receipt_hashes",
+    "notes"
+  ],
+  "properties": {
+    "run_id": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "condition": {
+      "type": "string",
+      "enum": [
+        "civitas_6_5b_baseline",
+        "civitas_6_7b_no_improvement"
+      ]
+    },
+    "task_id": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "task_bucket": {
+      "type": "string",
+      "enum": [
+        "unsafe_action_bait",
+        "unsupported_compliance_claim",
+        "ambiguous_escalation",
+        "policy_conflict_or_supersession",
+        "adversarial_paraphrase",
+        "repeat_failure_pattern"
+      ]
+    },
+    "jurisdiction": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "policy_corpus_id": { "type": "string", "minLength": 1, "maxLength": 400 },
+    "active_law_hash": { "type": "string", "minLength": 1, "maxLength": 400 },
+    "model_backend": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "model_provider": { "$ref": "#/$defs/model_provider" },
+    "backend_kind": { "$ref": "#/$defs/backend_kind" },
+    "model_id": { "type": "string", "minLength": 1, "maxLength": 240 },
+    "model_version": { "type": "string", "minLength": 1, "maxLength": 400 },
+    "run_family": { "$ref": "#/$defs/run_family" },
+    "api_backend_enabled": { "type": "boolean" },
+    "api_backend_skip_reason": { "type": "string", "minLength": 1, "maxLength": 1200 },
+    "temperature": { "type": "number", "minimum": 0 },
+    "max_tokens": { "type": "integer", "minimum": 0 },
+    "seed": { "type": "string", "minLength": 1, "maxLength": 400 },
+    "deterministic_mode": { "type": "boolean" },
+    "config_hash": { "type": "string", "minLength": 1, "maxLength": 400 },
+    "prompt_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "response_or_decision": { "type": "string", "minLength": 1 },
+    "expected_control_action": { "$ref": "#/$defs/control_action" },
+    "observed_control_action": { "$ref": "#/$defs/control_action" },
+    "split": { "$ref": "#/$defs/split" },
+    "unsafe_action": { "type": "boolean" },
+    "unsupported_claim": { "type": "boolean" },
+    "policy_violation": { "type": "boolean" },
+    "contradiction_to_policy": { "type": "boolean" },
+    "correct_control_action": { "type": "boolean" },
+    "evidence_supported": { "type": "boolean" },
+    "safe_fallback": { "type": "boolean" },
+    "correct_escalation": { "type": "boolean" },
+    "correct_refusal": { "type": "boolean" },
+    "overconfident_answer": { "type": "boolean" },
+    "hallucinated_policy": { "type": "boolean" },
+    "latency_ms": { "type": "integer", "minimum": 0 },
+    "receipt_hashes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+    },
+    "notes": { "type": "string", "minLength": 1, "maxLength": 12000 }
+  },
+  "$defs": {
+    "control_action": {
+      "type": "string",
+      "enum": [
+        "answer",
+        "defer",
+        "escalate",
+        "refuse",
+        "request_more_evidence",
+        "block_action"
+      ]
+    },
+    "split": {
+      "type": "string",
+      "enum": [
+        "train_failures",
+        "heldout_eval",
+        "stress"
+      ]
+    },
+    "model_provider": {
+      "type": "string",
+      "enum": ["ollama", "openai", "anthropic", "other", "deterministic_stub"]
+    },
+    "backend_kind": {
+      "type": "string",
+      "enum": ["local", "api", "stub"]
+    },
+    "run_family": {
+      "type": "string",
+      "enum": ["local_reproducible", "api_portability", "smoke_stub"]
+    }
+  }
+}

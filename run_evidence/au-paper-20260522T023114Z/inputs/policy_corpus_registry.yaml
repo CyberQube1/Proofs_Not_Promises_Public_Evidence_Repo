@@ -1,0 +1,232 @@
+schema: civitas.paper_eval_6_7b.policy_corpus_registry.v1
+registry_role: linkage_only
+authority_boundary: >-
+  The registry points benchmark tasks at Praxis and Aegis governance artifact
+  references. Praxis remains the policy ingestion source of truth and Aegis
+  active-governance metadata remains the active-law source of truth.
+entries:
+  au_finance_paper_scope:
+    corpus_id: au_finance_paper_scope
+    jurisdiction: AU
+    regulator: AU finance baseline with APRA and ASIC source subsets
+    document_title: AU finance paper scope bound to frozen Praxis baseline and selected Aegis active governance
+    document_version: baseline-au-finance 10cf217f862c plus active-governance 3ee7b6741b35
+    document_family: au_finance_paper_scope
+    source_refs:
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/governance/manifest.json
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/governance/publication.json
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/active_docs.baseline-au-finance.json
+      - "s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_stem/APRA CPS 234 Information Security.index.json"
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_stem/cps_234_july_2019_for_public_release.index.json
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_stem/rg234-published-15-november-2012-20211008.index.json
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_stem/rg271-published-2-september-2021.index.json
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_stem/rg274-published-10-september-2024.index.json
+    praxis_corpus_ref: baseline-au-finance
+    praxis_bundle_id: br_1e6d12c254a3
+    praxis_bundle_version: 10cf217f862c
+    praxis_artifact_uri: s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c
+    published_root: /app/storage/published_bundles/baselines/baseline-au-finance
+    published_minio_prefix: baselines/baseline-au-finance/bundles/10cf217f862c
+    baseline_slug: baseline-au-finance
+    baseline_release_id: br_1e6d12c254a3
+    baseline_minio_prefix: baselines/baseline-au-finance/bundles/10cf217f862c
+    aegis_active_governance_artifact_ref: /home/spqr-admin/praxis-admin/runtime/mesh-judged/active-governance/smc_94c4ce2decc3494c612a785e.json
+    aegis_active_governance_bundle_id: pb_7d2cdbf37fef9037b12cb87888728156
+    aegis_active_governance_bundle_version: 3ee7b6741b35
+    aegis_active_law_hash: sha256:2cc5fdbc5fa2a1dad655079eeb7b140970acabe9c54bf86f3b8931b931d9f91a
+    active_law_epoch_id: ale_36e8fca1efdb131047beb98f9fa426a4
+    active_law_epoch_root: sha256:2cc5fdbc5fa2a1dad655079eeb7b140970acabe9c54bf86f3b8931b931d9f91a
+    active_law_epoch_sequence_root: sha256:b37b1d2ee2ecc6c5958fa49ddbbc52d6b84894f6b0987f57ef06fc3513ce9046
+    active_law_epoch_sequence_index: 2
+    active_law_epoch_ilk_ref: ilk://event/rev_tenant_aegis-paper_4e18e5be8d24_2659_1e185a225cc4b49e6338dc76
+    active_law_state: active
+    constitutional_graph_ref: governance/documents/artifacts/constitutional_graph.json
+    policy_graph_hash: 8acf1fc1023cb85f56a5948392655424abd6dd32c985de891f697f830b05edd7e451930467e89d45930009510bd20460385e34179745ba146f33cae1c01ff40d
+    trust_region_ref: governance/documents/policy/trust_region.yaml
+    trust_region_hash: fc01b58453552a49a22d100c31480d521969925d5abba93f38f525451f733c52bb1b2ddbdbbb26abf0aae5e747806403c4542848db9add91f292f87fc911c5d7
+    source_bundle_root: sha3-512:ca4934c2e3c72b760685f89f510d7239c33190d6a61d3c5cb41a496a0bd5f4e2f8dffd711997edad342f2215e63e7827d379bf4cb68d80aa32b715df28ae2cb4
+    activated_at: 2026-05-10T00:12:38.767412411Z
+    status: active_in_aegis
+    confidence: high
+    source_of_truth: aegis_active_governance
+    task_scope_notes:
+      - Use this selected corpus ID for AU finance paper tasks.
+      - APRA CPS 234 and ASIC RG refs remain source subsets contained by the frozen AU finance Praxis baseline.
+      - Do not represent this lane as a standalone APRA or standalone ASIC active corpus.
+    evidence_notes:
+      - Praxis baseline release br_1e6d12c254a3 and fingerprint 10cf217f862c freeze the AU finance source indexes.
+      - Selected active-governance evidence is /home/spqr-admin/praxis-admin/runtime/mesh-judged/active-governance/smc_94c4ce2decc3494c612a785e.json.
+      - The selected Aegis active-governance bundle is pb_7d2cdbf37fef9037b12cb87888728156 at fingerprint 3ee7b6741b35.
+      - In this paper lane, active_law_hash maps to active_law_epoch_root and policy_graph_hash maps to constitutional_graph_sha3_512.
+    limitations:
+      - This lane supports the AU finance paper scope only; it does not resolve standalone APRA, ASIC, or EU active-corpus authority.
+
+  au_finance_baseline:
+    corpus_id: au_finance_baseline
+    jurisdiction: AU
+    regulator: AU finance baseline
+    document_title: AU finance platform baseline governance bundle
+    document_version: 10cf217f862c
+    document_family: au_finance_baseline
+    source_refs:
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/governance/manifest.json
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/governance/publication.json
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/active_docs.baseline-au-finance.json
+    praxis_corpus_ref: baseline-au-finance
+    praxis_bundle_id: br_1e6d12c254a3
+    praxis_bundle_version: 10cf217f862c
+    praxis_artifact_uri: s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c
+    published_root: /app/storage/published_bundles/baselines/baseline-au-finance
+    published_minio_prefix: baselines/baseline-au-finance/bundles/10cf217f862c
+    baseline_slug: baseline-au-finance
+    baseline_release_id: br_1e6d12c254a3
+    baseline_minio_prefix: baselines/baseline-au-finance/bundles/10cf217f862c
+    aegis_active_law_hash: PENDING_AEGIS_ACTIVE_LAW_HASH
+    active_law_epoch_id: PENDING_ACTIVE_LAW_EPOCH_ID
+    active_law_epoch_root: PENDING_ACTIVE_LAW_EPOCH_ROOT
+    active_law_epoch_sequence_root: PENDING_ACTIVE_LAW_EPOCH_SEQUENCE_ROOT
+    active_law_epoch_sequence_index: PENDING_ACTIVE_LAW_EPOCH_SEQUENCE_INDEX
+    active_law_epoch_ilk_ref: PENDING_ACTIVE_LAW_EPOCH_ILK_REF
+    active_law_state: PENDING_ACTIVE_LAW_STATE
+    policy_graph_hash: PENDING_POLICY_GRAPH_HASH
+    trust_region_ref: governance/documents/policy/trust_region.yaml
+    trust_region_hash: bcd91f3a754618f321165fb15a56ec09f3ddffb6ba930dff6f9b74ac351358ce6045f7e983b2c806ac43918ac659b51068a16013384fd87df4b79c78ee02b3bb
+    source_bundle_root: PENDING_SOURCE_REFS
+    activated_at: PENDING_ACTIVATED_AT
+    status: loaded_in_praxis
+    confidence: high
+    source_of_truth: praxis
+    task_scope_notes:
+      - Use for AU finance baseline tasks whose allowed sources point at this frozen Praxis baseline version.
+      - Do not treat the baseline publication as Aegis active law until the task binds an Aegis active-law ref.
+    evidence_notes:
+      - Prompt 10A found the baseline release, bundle version, Praxis governance prefix, and trust-region hash in published metadata.
+      - Prompt 10A also found Aegis paper runtime metadata that binds this baseline, but that scoped active-law epoch is not copied into this baseline entry.
+    limitations:
+      - Prompt 10A did not find a direct AU finance baseline Aegis active-law hash or baseline epoch.
+      - Prompt 10A did not find an explicit policy graph hash.
+
+  asic:
+    corpus_id: asic
+    jurisdiction: AU
+    regulator: ASIC
+    document_title: ASIC RG 234, RG 271, and RG 274 index source subset
+    document_version: baseline-au-finance 10cf217f862c index refs
+    document_family: asic_regulatory_guides
+    source_refs:
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_stem/rg234-published-15-november-2012-20211008.index.json
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_stem/rg271-published-2-september-2021.index.json
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_stem/rg274-published-10-september-2024.index.json
+    praxis_corpus_ref: PENDING_PRAXIS_CORPUS_REF
+    praxis_bundle_id: PENDING_PRAXIS_BUNDLE_ID
+    praxis_bundle_version: 10cf217f862c
+    praxis_artifact_uri: PENDING_ARTIFACT_URI
+    published_root: /app/storage/published_bundles/baselines/baseline-au-finance
+    published_minio_prefix: baselines/baseline-au-finance/bundles/10cf217f862c
+    baseline_slug: baseline-au-finance
+    baseline_release_id: br_1e6d12c254a3
+    baseline_minio_prefix: baselines/baseline-au-finance/bundles/10cf217f862c
+    aegis_active_law_hash: PENDING_AEGIS_ACTIVE_LAW_HASH
+    active_law_epoch_id: PENDING_ACTIVE_LAW_EPOCH_ID
+    active_law_epoch_root: PENDING_ACTIVE_LAW_EPOCH_ROOT
+    active_law_epoch_sequence_root: PENDING_ACTIVE_LAW_EPOCH_SEQUENCE_ROOT
+    active_law_epoch_sequence_index: PENDING_ACTIVE_LAW_EPOCH_SEQUENCE_INDEX
+    active_law_epoch_ilk_ref: PENDING_ACTIVE_LAW_EPOCH_ILK_REF
+    active_law_state: PENDING_ACTIVE_LAW_STATE
+    policy_graph_hash: PENDING_POLICY_GRAPH_HASH
+    trust_region_ref: PENDING_SOURCE_REFS
+    trust_region_hash: PENDING_TRUST_REGION_HASH
+    source_bundle_root: PENDING_SOURCE_REFS
+    activated_at: PENDING_ACTIVATED_AT
+    status: discovered_unverified
+    confidence: medium
+    source_of_truth: praxis
+    task_scope_notes:
+      - Current refs are ASIC-flavoured source indexes contained by the AU finance baseline.
+      - Do not use this lane as a dedicated active ASIC authority corpus until Praxis and Aegis refs are resolved.
+    evidence_notes:
+      - Prompt 10A found the RG 234, RG 271, and RG 274 index refs in the AU finance baseline metadata.
+    limitations:
+      - Standalone ASIC Praxis corpus ref, bundle ID, artifact URI, active law, trust region, and policy graph hash remain pending.
+
+  apra:
+    corpus_id: apra
+    jurisdiction: AU
+    regulator: APRA
+    document_title: APRA CPS 234 Information Security index source subset
+    document_version: baseline-au-finance 10cf217f862c index refs
+    document_family: apra_prudential_information_security
+    source_refs:
+      - "s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_stem/APRA CPS 234 Information Security.index.json"
+      - s3://praxis-governance/baselines/baseline-au-finance/bundles/10cf217f862c/index/by_stem/cps_234_july_2019_for_public_release.index.json
+    praxis_corpus_ref: PENDING_PRAXIS_CORPUS_REF
+    praxis_bundle_id: PENDING_PRAXIS_BUNDLE_ID
+    praxis_bundle_version: 10cf217f862c
+    praxis_artifact_uri: PENDING_ARTIFACT_URI
+    published_root: /app/storage/published_bundles/baselines/baseline-au-finance
+    published_minio_prefix: baselines/baseline-au-finance/bundles/10cf217f862c
+    baseline_slug: baseline-au-finance
+    baseline_release_id: br_1e6d12c254a3
+    baseline_minio_prefix: baselines/baseline-au-finance/bundles/10cf217f862c
+    aegis_active_law_hash: PENDING_AEGIS_ACTIVE_LAW_HASH
+    active_law_epoch_id: PENDING_ACTIVE_LAW_EPOCH_ID
+    active_law_epoch_root: PENDING_ACTIVE_LAW_EPOCH_ROOT
+    active_law_epoch_sequence_root: PENDING_ACTIVE_LAW_EPOCH_SEQUENCE_ROOT
+    active_law_epoch_sequence_index: PENDING_ACTIVE_LAW_EPOCH_SEQUENCE_INDEX
+    active_law_epoch_ilk_ref: PENDING_ACTIVE_LAW_EPOCH_ILK_REF
+    active_law_state: PENDING_ACTIVE_LAW_STATE
+    policy_graph_hash: PENDING_POLICY_GRAPH_HASH
+    trust_region_ref: PENDING_SOURCE_REFS
+    trust_region_hash: PENDING_TRUST_REGION_HASH
+    source_bundle_root: PENDING_SOURCE_REFS
+    activated_at: PENDING_ACTIVATED_AT
+    status: discovered_unverified
+    confidence: high
+    source_of_truth: praxis
+    task_scope_notes:
+      - Current refs are APRA CPS 234 indexes contained by the AU finance baseline.
+      - Real claim-supporting APRA tasks still need resolved active-law and governed bundle bindings.
+    evidence_notes:
+      - Prompt 10A found APRA CPS 234 by-stem indexes in published baseline metadata and active-doc filenames.
+    limitations:
+      - Standalone APRA Praxis corpus ref, bundle ID, artifact URI, active law, trust region, and policy graph hash remain pending.
+
+  eu:
+    corpus_id: eu
+    jurisdiction: EU
+    regulator: PENDING_SOURCE_REFS
+    document_title: PENDING_SOURCE_REFS
+    document_version: PENDING_SOURCE_REFS
+    document_family: eu_policy_lane
+    source_refs:
+      - PENDING_SOURCE_REFS
+    praxis_corpus_ref: PENDING_PRAXIS_CORPUS_REF
+    praxis_bundle_id: PENDING_PRAXIS_BUNDLE_ID
+    praxis_bundle_version: PENDING_PRAXIS_BUNDLE_VERSION
+    praxis_artifact_uri: PENDING_ARTIFACT_URI
+    published_root: PENDING_ARTIFACT_URI
+    published_minio_prefix: PENDING_ARTIFACT_URI
+    baseline_slug: PENDING_SOURCE_REFS
+    baseline_release_id: PENDING_PRAXIS_BUNDLE_ID
+    baseline_minio_prefix: PENDING_ARTIFACT_URI
+    aegis_active_law_hash: PENDING_AEGIS_ACTIVE_LAW_HASH
+    active_law_epoch_id: PENDING_ACTIVE_LAW_EPOCH_ID
+    active_law_epoch_root: PENDING_ACTIVE_LAW_EPOCH_ROOT
+    active_law_epoch_sequence_root: PENDING_ACTIVE_LAW_EPOCH_SEQUENCE_ROOT
+    active_law_epoch_sequence_index: PENDING_ACTIVE_LAW_EPOCH_SEQUENCE_INDEX
+    active_law_epoch_ilk_ref: PENDING_ACTIVE_LAW_EPOCH_ILK_REF
+    active_law_state: PENDING_ACTIVE_LAW_STATE
+    policy_graph_hash: PENDING_POLICY_GRAPH_HASH
+    trust_region_ref: PENDING_SOURCE_REFS
+    trust_region_hash: PENDING_TRUST_REGION_HASH
+    source_bundle_root: PENDING_SOURCE_REFS
+    activated_at: PENDING_ACTIVATED_AT
+    status: planned
+    confidence: placeholder
+    source_of_truth: manual_placeholder
+    task_scope_notes:
+      - Do not write real claim-supporting EU task rows from this placeholder entry.
+    evidence_notes:
+      - Prompt 10A found no EU, European, or GDPR index filename or inspected metadata ref in the search targets.
+    limitations:
+      - EU source refs, Praxis bundle metadata, active law, trust region, and policy graph hash are unresolved.

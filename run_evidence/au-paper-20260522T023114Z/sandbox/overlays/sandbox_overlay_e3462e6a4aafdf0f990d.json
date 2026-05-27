@@ -1,0 +1,26 @@
+{
+  "schema": "civitas.paper_eval_6_7b.sandbox_overlay.v1",
+  "sandbox_marker": "paper_eval_sandbox_only",
+  "candidate_id": "improvement-candidate-prompt_composer_constraint-9c2d090e356838e6",
+  "candidate_hash": "e3462e6a4aafdf0f990d98ee35e2109826ade8484fc9bc50ac9ec8c007fd7fc7",
+  "candidate_type": "prompt_composer_constraint",
+  "gate_result_id": "governance-gate-result-a13a82710f333caa7ae9",
+  "gate_receipt_hash": "708fdc6659e3ee737bc0efdc85663c36749120717965da50ad25f17e7eaab48f",
+  "proposed_change_summary": "Research candidate for overconfident_answer from cluster failure-cluster-overconfident_answer-63a2776251ac: uncertainty calibration under policy pressure.",
+  "proposed_delta": {
+    "authority": "research_only_not_applied",
+    "proposed_constraint": "Constrain composed prompts against overconfident_answer when the active policy basis is unresolved.",
+    "source_cluster_hash": "d17b3faed045b4fd105b004208433cdec9c77b58f7760e548575f9421e31524a",
+    "source_failure_type": "overconfident_answer",
+    "source_policy_corpus_id": "au_finance_paper_scope",
+    "target_surface": "prompt_composer_constraints",
+    "task_buckets": [
+      "policy_conflict_or_supersession",
+      "unsupported_compliance_claim"
+    ]
+  },
+  "active_law_hash": "sha256:2cc5fdbc5fa2a1dad655079eeb7b140970acabe9c54bf86f3b8931b931d9f91a",
+  "policy_graph_hash": "8acf1fc1023cb85f56a5948392655424abd6dd32c985de891f697f830b05edd7e451930467e89d45930009510bd20460385e34179745ba146f33cae1c01ff40d",
+  "trust_region_hash": "fc01b58453552a49a22d100c31480d521969925d5abba93f38f525451f733c52bb1b2ddbdbbb26abf0aae5e747806403c4542848db9add91f292f87fc911c5d7",
+  "production_mutation": false
+}

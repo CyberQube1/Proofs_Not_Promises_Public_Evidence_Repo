@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civitas.internal/paper_eval_6.7b/schemas/heldout_stress_result.schema.json",
+  "title": "Civitas67BHeldoutStressResult",
+  "description": "One comparable research-only held-out or stress result row bound to baseline or Prompt 6 sandbox evaluation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_id",
+    "phase",
+    "condition",
+    "task_id",
+    "task_bucket",
+    "split",
+    "jurisdiction",
+    "policy_corpus_id",
+    "active_law_hash",
+    "sandbox_config_hash",
+    "model_backend",
+    "model_id",
+    "response_or_decision",
+    "expected_control_action",
+    "observed_control_action",
+    "unsafe_action",
+    "unsupported_claim",
+    "policy_violation",
+    "contradiction_to_policy",
+    "correct_control_action",
+    "evidence_supported",
+    "safe_fallback",
+    "latency_ms",
+    "receipt_hashes",
+    "regression_flag",
+    "error_flag",
+    "error_message",
+    "notes"
+  ],
+  "properties": {
+    "run_id": { "type": "string", "minLength": 1, "maxLength": 320 },
+    "phase": { "type": "string", "enum": ["heldout_eval", "stress_eval"] },
+    "condition": {
+      "type": "string",
+      "enum": [
+        "civitas_6_5b_baseline",
+        "civitas_6_7b_no_improvement",
+        "civitas_6_7b_governed_improvement"
+      ]
+    },
+    "task_id": { "type": "string", "minLength": 1, "maxLength": 320 },
+    "task_bucket": {
+      "type": "string",
+      "enum": [
+        "unsafe_action_bait",
+        "unsupported_compliance_claim",
+        "ambiguous_escalation",
+        "policy_conflict_or_supersession",
+        "adversarial_paraphrase",
+        "repeat_failure_pattern"
+      ]
+    },
+    "split": { "type": "string", "enum": ["heldout_eval", "stress"] },
+    "jurisdiction": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "policy_corpus_id": { "type": "string", "minLength": 1, "maxLength": 320 },
+    "active_law_hash": { "type": "string", "minLength": 1, "maxLength": 320 },
+    "candidate_hash": {
+      "type": "string",
+      "description": "Applied Prompt 6 sandbox candidate hash for governed-improvement rows.",
+      "minLength": 1,
+      "maxLength": 320
+    },
+    "sandbox_config_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "sandbox_state_path": {
+      "type": "string",
+      "description": "Prompt 6 sandbox state artifact loaded for governed-improvement rows.",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "model_backend": { "type": "string", "minLength": 1, "maxLength": 320 },
+    "model_provider": {
+      "type": "string",
+      "enum": ["ollama", "openai", "anthropic", "other", "deterministic_stub"]
+    },
+    "backend_kind": { "type": "string", "enum": ["local", "api", "stub"] },
+    "model_id": { "type": "string", "minLength": 1, "maxLength": 320 },
+    "model_version": { "type": "string", "minLength": 1, "maxLength": 400 },
+    "run_family": {
+      "type": "string",
+      "enum": ["local_reproducible", "api_portability", "smoke_stub"]
+    },
+    "api_backend_enabled": { "type": "boolean" },
+    "api_backend_skip_reason": { "type": "string", "minLength": 1, "maxLength": 1200 },
+    "temperature": { "type": "number", "minimum": 0 },
+    "max_tokens": { "type": "integer", "minimum": 0 },
+    "seed": { "type": "string", "minLength": 1, "maxLength": 400 },
+    "deterministic_mode": { "type": "boolean" },
+    "response_or_decision": { "type": "string", "minLength": 1, "maxLength": 40000 },
+    "expected_control_action": {
+      "type": "string",
+      "enum": [
+        "answer",
+        "defer",
+        "escalate",
+        "refuse",
+        "request_more_evidence",
+        "block_action"
+      ]
+    },
+    "observed_control_action": { "type": "string", "minLength": 1, "maxLength": 320 },
+    "unsafe_action": { "type": "boolean" },
+    "unsupported_claim": { "type": "boolean" },
+    "policy_violation": { "type": "boolean" },
+    "contradiction_to_policy": { "type": "boolean" },
+    "correct_control_action": { "type": "boolean" },
+    "evidence_supported": { "type": "boolean" },
+    "safe_fallback": { "type": "boolean" },
+    "correct_escalation": { "type": "boolean" },
+    "correct_refusal": { "type": "boolean" },
+    "overconfident_answer": { "type": "boolean" },
+    "hallucinated_policy": { "type": "boolean" },
+    "latency_ms": { "type": "integer", "minimum": 0 },
+    "receipt_hashes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+    },
+    "regression_flag": { "type": "boolean" },
+    "error_flag": { "type": "boolean" },
+    "error_message": { "type": "string", "minLength": 1, "maxLength": 12000 },
+    "notes": { "type": "string", "minLength": 1, "maxLength": 20000 }
+  }
+}

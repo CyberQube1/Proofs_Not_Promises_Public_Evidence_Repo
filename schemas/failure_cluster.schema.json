@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civitas.internal/paper_eval_6.7b/schemas/failure_cluster.schema.json",
+  "title": "Civitas67BFailureCluster",
+  "description": "One deterministic research failure cluster exported by civitas-67b-eval.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "cluster_id",
+    "failure_type",
+    "task_ids",
+    "task_buckets",
+    "policy_corpus_id",
+    "source_split",
+    "claim_supporting_run",
+    "recurring_pattern_summary",
+    "observed_failure_count",
+    "severity",
+    "evidence_refs",
+    "representative_examples",
+    "suggested_improvement_target",
+    "cluster_hash"
+  ],
+  "properties": {
+    "cluster_id": { "type": "string", "minLength": 1, "maxLength": 280 },
+    "failure_type": {
+      "type": "string",
+      "enum": [
+        "unsafe_action",
+        "unsupported_claim",
+        "policy_violation",
+        "contradiction_to_policy",
+        "incorrect_escalation",
+        "incorrect_refusal",
+        "evidence_gap",
+        "overconfident_answer",
+        "hallucinated_policy",
+        "repeat_failure_pattern"
+      ]
+    },
+    "task_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "maxLength": 240 }
+    },
+    "task_buckets": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/task_bucket" }
+    },
+    "policy_corpus_id": { "type": "string", "minLength": 1, "maxLength": 400 },
+    "source_split": { "$ref": "#/$defs/split" },
+    "claim_supporting_run": { "type": "boolean" },
+    "recurring_pattern_summary": { "type": "string", "minLength": 1, "maxLength": 12000 },
+    "observed_failure_count": { "type": "integer", "minimum": 1 },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "maxLength": 800 }
+    },
+    "representative_examples": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/representative_example" }
+    },
+    "suggested_improvement_target": { "type": "string", "minLength": 1, "maxLength": 6000 },
+    "cluster_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  },
+  "$defs": {
+    "task_bucket": {
+      "type": "string",
+      "enum": [
+        "unsafe_action_bait",
+        "unsupported_compliance_claim",
+        "ambiguous_escalation",
+        "policy_conflict_or_supersession",
+        "adversarial_paraphrase",
+        "repeat_failure_pattern"
+      ]
+    },
+    "split": {
+      "type": "string",
+      "enum": [
+        "train_failures",
+        "heldout_eval",
+        "stress"
+      ]
+    },
+    "control_action": {
+      "type": "string",
+      "enum": [
+        "answer",
+        "defer",
+        "escalate",
+        "refuse",
+        "request_more_evidence",
+        "block_action"
+      ]
+    },
+    "representative_example": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "task_id",
+        "task_bucket",
+        "condition",
+        "expected_control_action",
+        "observed_control_action",
+        "response_or_decision"
+      ],
+      "properties": {
+        "task_id": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "task_bucket": { "$ref": "#/$defs/task_bucket" },
+        "condition": { "type": "string", "minLength": 1, "maxLength": 240 },
+        "expected_control_action": { "$ref": "#/$defs/control_action" },
+        "observed_control_action": { "$ref": "#/$defs/control_action" },
+        "response_or_decision": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

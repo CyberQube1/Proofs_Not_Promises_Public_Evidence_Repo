@@ -1,0 +1,25 @@
+{
+  "schema": "civitas.paper_eval_6_7b.sandbox_overlay.v1",
+  "sandbox_marker": "paper_eval_sandbox_only",
+  "candidate_id": "improvement-candidate-routing_policy_adjustment-47c5864a27be8fb0",
+  "candidate_hash": "39117a56af9fb334c0a9b4a760fcf4c82d88f00366738c91cb01168a9de8b884",
+  "candidate_type": "routing_policy_adjustment",
+  "gate_result_id": "governance-gate-result-d89c157e73e8d6881b83",
+  "gate_receipt_hash": "993a3e7a2bce02eb418f7699ca16bbfbc3b6d17529a52f307f9c332d88baef32",
+  "proposed_change_summary": "Research candidate for repeat_failure_pattern from cluster failure-cluster-repeat_failure_pattern-d7f965cad7e5: recurrence suppression for known failure patterns.",
+  "proposed_delta": {
+    "authority": "research_only_not_applied",
+    "proposed_constraint": "Route repeated repeat_failure_pattern evidence through the bounded control path before answer output.",
+    "source_cluster_hash": "6f107534f237f5c01ea7f33572aa5fc594d481290243bfe28b6923e98ad05cdd",
+    "source_failure_type": "repeat_failure_pattern",
+    "source_policy_corpus_id": "au_finance_paper_scope",
+    "target_surface": "governed_control_routing",
+    "task_buckets": [
+      "repeat_failure_pattern"
+    ]
+  },
+  "active_law_hash": "sha256:2cc5fdbc5fa2a1dad655079eeb7b140970acabe9c54bf86f3b8931b931d9f91a",
+  "policy_graph_hash": "8acf1fc1023cb85f56a5948392655424abd6dd32c985de891f697f830b05edd7e451930467e89d45930009510bd20460385e34179745ba146f33cae1c01ff40d",
+  "trust_region_hash": "fc01b58453552a49a22d100c31480d521969925d5abba93f38f525451f733c52bb1b2ddbdbbb26abf0aae5e747806403c4542848db9add91f292f87fc911c5d7",
+  "production_mutation": false
+}

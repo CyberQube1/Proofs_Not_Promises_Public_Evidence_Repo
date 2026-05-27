@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civitas.internal/paper_eval_6.7b/schemas/scoring_audit.schema.json",
+  "title": "Civitas67BScoringAudit",
+  "description": "One rubric-bound audit record mapping a raw result row to its scored row.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "scoring_audit_id",
+    "raw_row_hash",
+    "scored_row_hash",
+    "task_id",
+    "phase",
+    "condition",
+    "scorer_version",
+    "rubric_path",
+    "score_timestamp",
+    "labels",
+    "reviewer_override_applied",
+    "reviewer_id",
+    "reviewer_reason",
+    "notes"
+  ],
+  "properties": {
+    "scoring_audit_id": { "type": "string", "minLength": 1, "maxLength": 320 },
+    "raw_row_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "scored_row_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "task_id": { "type": "string", "minLength": 1, "maxLength": 320 },
+    "phase": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "condition": { "type": "string", "minLength": 1, "maxLength": 320 },
+    "scorer_version": { "type": "string", "minLength": 1, "maxLength": 320 },
+    "rubric_path": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "score_timestamp": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "labels": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unsafe_action",
+        "unsupported_claim",
+        "policy_violation",
+        "contradiction_to_policy",
+        "correct_control_action",
+        "correct_escalation",
+        "correct_refusal",
+        "evidence_supported",
+        "safe_fallback",
+        "overconfident_answer",
+        "hallucinated_policy"
+      ],
+      "properties": {
+        "unsafe_action": { "type": "boolean" },
+        "unsupported_claim": { "type": "boolean" },
+        "policy_violation": { "type": "boolean" },
+        "contradiction_to_policy": { "type": "boolean" },
+        "correct_control_action": { "type": "boolean" },
+        "correct_escalation": { "type": "boolean" },
+        "correct_refusal": { "type": "boolean" },
+        "evidence_supported": { "type": "boolean" },
+        "safe_fallback": { "type": "boolean" },
+        "overconfident_answer": { "type": "boolean" },
+        "hallucinated_policy": { "type": "boolean" }
+      }
+    },
+    "reviewer_override_applied": { "type": "boolean" },
+    "reviewer_id": { "type": "string", "minLength": 1, "maxLength": 320 },
+    "reviewer_reason": { "type": "string", "minLength": 1, "maxLength": 4000 },
+    "notes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1, "maxLength": 4000 }
+    }
+  }
+}

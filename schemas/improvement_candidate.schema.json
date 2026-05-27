@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civitas.internal/paper_eval_6.7b/schemas/improvement_candidate.schema.json",
+  "title": "Civitas67BResearchImprovementCandidate",
+  "description": "One research-only improvement candidate exported from a Civitas 6.7B failure cluster.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_id",
+    "candidate_hash",
+    "source_cluster_id",
+    "source_cluster_hash",
+    "source_split",
+    "candidate_type",
+    "proposed_change_summary",
+    "proposed_delta",
+    "expected_benefit",
+    "possible_risks",
+    "evidence_refs",
+    "policy_refs",
+    "active_law_hash",
+    "policy_graph_hash",
+    "trust_region_hash",
+    "config_hash_before",
+    "generation_run_id",
+    "generation_condition",
+    "gate_boundary_context",
+    "claim_supporting_run",
+    "generated_by",
+    "generated_at",
+    "status",
+    "notes"
+  ],
+  "properties": {
+    "candidate_id": {
+      "type": "string",
+      "description": "Stable research candidate id derived from the source cluster and bound hashes.",
+      "minLength": 3,
+      "maxLength": 240,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+    },
+    "candidate_hash": {
+      "type": "string",
+      "description": "SHA3-256 hash of canonical candidate content excluding this field.",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "source_cluster_id": {
+      "type": "string",
+      "description": "Failure cluster id that caused this candidate record to be exported.",
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "source_cluster_hash": {
+      "type": "string",
+      "description": "Hash of the failure cluster that sourced the candidate.",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "source_split": {
+      "type": "string",
+      "description": "Dataset split that produced the source cluster.",
+      "enum": [
+        "train_failures",
+        "heldout_eval",
+        "stress"
+      ]
+    },
+    "candidate_type": {
+      "type": "string",
+      "enum": [
+        "routing_policy_adjustment",
+        "evidence_gate_tightening",
+        "escalation_policy_adjustment",
+        "refusal_policy_adjustment",
+        "prompt_composer_constraint",
+        "model_pack_selection_rule",
+        "trust_region_parameter_candidate",
+        "other"
+      ]
+    },
+    "proposed_change_summary": {
+      "type": "string",
+      "description": "Human-readable bounded change summary for review.",
+      "minLength": 1,
+      "maxLength": 6000
+    },
+    "proposed_delta": {
+      "type": "object",
+      "description": "Structured research delta. It is candidate paperwork and is not applied by export."
+    },
+    "expected_benefit": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 6000
+    },
+    "possible_risks": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 2000
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "description": "Failure cluster and receipt-derived evidence references.",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 600
+      }
+    },
+    "policy_refs": {
+      "type": "array",
+      "description": "Policy corpus and active policy bindings for the candidate.",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 600
+      }
+    },
+    "active_law_hash": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "policy_graph_hash": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "trust_region_hash": {
+      "type": "string",
+      "description": "Trust-region hash declared for later gate work, or an explicit placeholder such as not_loaded.",
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "config_hash_before": {
+      "type": "string",
+      "description": "Configuration hash before any candidate evaluation or later gate.",
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "generation_run_id": {
+      "type": "string",
+      "description": "Candidate generation run id, or explicit placeholder when not loaded.",
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "generation_condition": {
+      "type": "string",
+      "description": "Candidate generation condition, or explicit placeholder when not loaded.",
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "gate_boundary_context": {
+      "type": "string",
+      "description": "Declared pre-gate research boundary for the candidate export.",
+      "minLength": 1,
+      "maxLength": 6000
+    },
+    "claim_supporting_run": {
+      "type": "boolean",
+      "description": "False for any non-train or debug-override candidate artifact."
+    },
+    "generated_by": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "generated",
+        "ready_for_gate"
+      ]
+    },
+    "notes": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 6000
+    }
+  }
+}

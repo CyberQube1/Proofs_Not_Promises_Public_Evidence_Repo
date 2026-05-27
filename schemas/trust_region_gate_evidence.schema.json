@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civitas.internal/paper_eval_6.7b/schemas/trust_region_gate_evidence.schema.json",
+  "title": "Civitas67BTrustRegionGateEvidence",
+  "description": "Candidate-bound research evidence for the AU paper trust-region gate lane.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_hash",
+    "candidate_id",
+    "trust_region_hash",
+    "candidate_delta_hash",
+    "decision",
+    "reason_codes",
+    "breach_count",
+    "summary",
+    "receipt_hash",
+    "evaluated_at"
+  ],
+  "properties": {
+    "candidate_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "candidate_id": { "type": "string", "minLength": 1, "maxLength": 280 },
+    "trust_region_hash": { "type": "string", "minLength": 1, "maxLength": 400 },
+    "candidate_delta_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "decision": {
+      "type": "string",
+      "enum": [ "passed", "breach", "needs_more_evidence" ]
+    },
+    "reason_codes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "maxLength": 400 }
+    },
+    "breach_count": { "type": "integer", "minimum": 0 },
+    "summary": { "type": "string", "minLength": 1, "maxLength": 12000 },
+    "receipt_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "evaluated_at": { "type": "string", "format": "date-time" }
+  }
+}

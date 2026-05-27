@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civitas.internal/paper_eval_6.7b/schemas/cassius_challenge_evidence.schema.json",
+  "title": "Civitas67BCassiusChallengeEvidence",
+  "description": "Receipt-bound Cassius challenge evidence for one improvement candidate.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_hash",
+    "candidate_id",
+    "cassius_state",
+    "cassius_receipt_hash",
+    "cassius_challenge_id",
+    "cassius_reason_codes",
+    "cassius_summary",
+    "cassius_source",
+    "cassius_artifact_refs",
+    "challenged_at",
+    "config_hash",
+    "input_hash",
+    "output_hash"
+  ],
+  "properties": {
+    "candidate_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "candidate_id": { "type": "string", "minLength": 1, "maxLength": 320 },
+    "cassius_state": { "type": "string", "enum": ["passed", "failed"] },
+    "cassius_receipt_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "cassius_challenge_id": { "type": "string", "minLength": 1, "maxLength": 320 },
+    "cassius_reason_codes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1, "maxLength": 320 }
+    },
+    "cassius_summary": { "type": "string", "minLength": 1, "maxLength": 12000 },
+    "cassius_source": { "type": "string", "enum": ["live_invocation", "loaded_artifact"] },
+    "cassius_artifact_refs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 2000 }
+    },
+    "challenged_at": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "config_hash": { "type": "string", "minLength": 1, "maxLength": 320 },
+    "input_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "output_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  }
+}

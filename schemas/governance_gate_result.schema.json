@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civitas.internal/paper_eval_6.7b/schemas/governance_gate_result.schema.json",
+  "title": "Civitas67BGovernanceGateResult",
+  "description": "One deterministic research-only governance gate result for a Civitas 6.7B improvement candidate.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "gate_result_id",
+    "candidate_id",
+    "candidate_hash",
+    "gate_status",
+    "reason_codes",
+    "cassius_required",
+    "cassius_state",
+    "cassius_receipt_hash",
+    "cassius_challenge_id",
+    "cassius_reason_codes",
+    "cassius_summary",
+    "cassius_source",
+    "trust_region_check",
+    "policy_check",
+    "replay_check",
+    "senate_or_aegis_check",
+    "required_evidence_present",
+    "missing_evidence",
+    "active_law_hash",
+    "trust_region_hash",
+    "policy_graph_hash",
+    "source_split",
+    "claim_supporting_run",
+    "gate_timestamp",
+    "gate_receipt_hash"
+  ],
+  "properties": {
+    "gate_result_id": { "type": "string", "minLength": 1, "maxLength": 280 },
+    "candidate_id": { "type": "string", "minLength": 1, "maxLength": 280 },
+    "candidate_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "gate_status": {
+      "type": "string",
+      "enum": [
+        "approved_for_sandbox",
+        "rejected",
+        "needs_more_evidence",
+        "blocked_by_trust_region",
+        "blocked_by_policy",
+        "blocked_by_replay",
+        "blocked_by_senate"
+      ]
+    },
+    "reason_codes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/reason_code" }
+    },
+    "cassius_required": { "type": "boolean" },
+    "cassius_state": {
+      "type": "string",
+      "enum": [
+        "passed",
+        "failed",
+        "unavailable",
+        "not_required"
+      ]
+    },
+    "cassius_receipt_hash": {
+      "oneOf": [
+        { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        { "type": "string", "enum": [ "unavailable", "not_required" ] }
+      ]
+    },
+    "cassius_challenge_id": { "type": "string", "minLength": 1, "maxLength": 280 },
+    "cassius_reason_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "maxLength": 400 }
+    },
+    "cassius_summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 12000
+    },
+    "cassius_source": {
+      "type": "string",
+      "enum": [
+        "live_invocation",
+        "loaded_artifact",
+        "unavailable"
+      ]
+    },
+    "trust_region_check": { "$ref": "#/$defs/gate_check" },
+    "policy_check": { "$ref": "#/$defs/gate_check" },
+    "replay_check": { "$ref": "#/$defs/gate_check" },
+    "senate_or_aegis_check": { "$ref": "#/$defs/gate_check" },
+    "required_evidence_present": { "type": "boolean" },
+    "missing_evidence": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1, "maxLength": 400 }
+    },
+    "active_law_hash": { "type": "string", "maxLength": 400 },
+    "trust_region_hash": { "type": "string", "maxLength": 400 },
+    "policy_graph_hash": { "type": "string", "maxLength": 400 },
+    "source_split": { "$ref": "#/$defs/split" },
+    "claim_supporting_run": { "type": "boolean" },
+    "gate_timestamp": { "type": "string", "format": "date-time" },
+    "gate_receipt_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+  },
+  "$defs": {
+    "split": {
+      "type": "string",
+      "enum": [
+        "train_failures",
+        "heldout_eval",
+        "stress"
+      ]
+    },
+    "reason_code": {
+      "type": "string",
+      "enum": [
+        "insufficient_evidence",
+        "policy_conflict",
+        "trust_region_breach",
+        "unsafe_drift",
+        "replay_regression",
+        "canary_failure",
+        "senate_quorum_missing",
+        "aegis_denied",
+        "unsupported_candidate_type",
+        "approved_for_sandbox_only",
+        "non_claim_supporting_input",
+        "missing_active_law_hash",
+        "missing_policy_graph_hash",
+        "missing_trust_region_hash",
+        "cassius_challenge_unavailable",
+        "cassius_challenge_failed"
+      ]
+    },
+    "gate_check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "summary"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "bound_hash_only",
+            "evidence_passed",
+            "needs_more_evidence",
+            "blocked",
+            "not_loaded",
+            "provided_unchecked",
+            "unavailable"
+          ]
+        },
+        "summary": { "type": "string", "minLength": 1, "maxLength": 12000 }
+      }
+    }
+  }
+}
